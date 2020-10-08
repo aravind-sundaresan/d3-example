@@ -9,9 +9,9 @@
     <script>
 
         // Setting the margins and dimensions of the graph
-        var margin = {top: 40, right: 20, bottom: 50, left: 70},
-            width = 960 - margin.left - margin.right,
-            height = 500 - margin.top - margin.bottom;
+        var margin = {top: 40, right: 20, bottom: 50, left: 70},  // user input
+            width = 960 - margin.left - margin.right, // user input
+            height = 500 - margin.top - margin.bottom; // user input
 
         // Setting the span of the x and y axes
         var x = d3.scaleBand()
@@ -30,23 +30,18 @@
 
 
         // Reading input data from a CSV file
-        d3.csv("data/reviews.csv", function(error, data) {
+        d3.csv("data/reviews.csv", function(error, data) { // user input (file name)
           if (error) throw error;
 
-          // // format the data
-          // data.forEach(function(d) {
-          //   d.rating = +d.rating;
-          // });
-
           // Defining the range of data values on the x and y axes
-          x.domain(data.map(function(d) { return d.year; }));
-          y.domain([0, d3.max(data, function(d) { return d.reviews; })]);
+          x.domain(data.map(function(d) { return d.year; }));  // user input (column name)
+          y.domain([0, d3.max(data, function(d) { return d.reviews; })]); // user input (column name)
 
           // Creating the rectangles/bars for the chart
           svg.selectAll(".bar")
              .data(data)
              .enter().append("rect")
-             .style("fill", "#33c7de") 
+             .style("fill", "#33c7de") // user input (color of the bars)
              .attr("x", function(d) { return x(d.year); })
              .attr("width", x.bandwidth())
              .attr("y", function(d) { return y(d.reviews); })
@@ -57,36 +52,36 @@
              .attr("transform", "translate(0," + height + ")")
              .call(d3.axisBottom(x));
 
-          // Adding label for the x-axis
+          // Adding the x-axis label
           svg.append("text")             
               .attr("transform",
-                    "translate(" + (width/2) + " ," + (height + margin.top) + ")")
-              .style("font-size", "18px") 
+                    "translate(" + (width/2) + " ," + (height + margin.top) + ")") 
+              .style("font-size", "18px") // user input
               .style("text-anchor", "middle")
-              .text("Year");
+              .text("Year"); // user input
 
           // Adding the y-axis
           svg.append("g")
              .call(d3.axisLeft(y));
 
-          // Adding label for the y-axis
+          // Adding the y-axis label
           svg.append("text")
               .attr("transform", "rotate(-90)")
               .attr("x",0 - (height / 2))
               .attr("y", 0 - margin.left)
               .attr("dy", "1em")
-              .style("font-size", "18px") 
+              .style("font-size", "18px") // user input
               .style("text-anchor", "middle")
-              .text("Number of Reviews");      
+              .text("Number of Reviews"); // user input    
 
           // Adding the chart title
           svg.append("text")
              .attr("x", (width / 2))             
              .attr("y", 0 - (margin.top / 2))
              .attr("text-anchor", "middle")  
-             .style("font-size", "22px") 
-             .style("text-decoration", "underline")  
-             .text("Example Bar Chart");
+             .style("font-size", "22px") // user input
+             .style("text-decoration", "underline") // user input
+             .text("Example Bar Chart"); // user input
 
         });
 
