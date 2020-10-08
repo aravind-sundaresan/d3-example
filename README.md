@@ -1,12 +1,9 @@
 # d3-example
-This repository contains the code to create a simple bar chart using D3.js
+This repository contains the code to create a bar chart using D3.js
 
 ### Project Organization
 ```nohighlight
-├── css                <- CSS files for styling the contents of the webpage
-├── data               <- Files containing data for populating the dashboard
-├── js                 <- JavaScript files containing vanilla JS and D3.js code.
-├── media         
+├── data               <- Files containing data for populating the chart
 ├── README.md          <- The top-level README for developers using this project.
 ├── index.html         <- HTML file that serves as the homepage of the website
 ```
