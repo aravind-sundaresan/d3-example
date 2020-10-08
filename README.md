@@ -20,9 +20,9 @@ The instructions to run the application from the project folder are listed below
 
 ### Instructions to launch the application
 
-- Open the command prompt (Windows) / terminal (macOS/Linux)
+- Open command prompt (Windows) / terminal (macOS/Linux)
 
-- Inorder to launch the application, the user must run a simple local HTTP server from the project folder. We can use Python 
+- Inorder to launch the application, the user must run a local HTTP server from the project folder. We can use Python 
 to run the server. 
 
   If the Python version installed in the system is 3.X, the server can be launched with the following command:
